@@ -10,7 +10,7 @@
     "seed": "npm --prefix server run seed",
     "test": "npm --prefix server test",
     "build": "npm --prefix client run build",
-    "build:render": "npm --prefix server install && npm --prefix client install && npm --prefix client run build",
+    "build:render": "npm --prefix server install --include=dev && npm --prefix client install --include=dev && npm --prefix client run build",
     "start": "node server/index.js"
   },
   "devDependencies": {
