@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: smart-employee-management-system
+    env: node
+    plan: free
+    buildCommand: npm run build:render
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES_IN
+        value: 1d
